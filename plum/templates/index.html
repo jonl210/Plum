@@ -15,14 +15,12 @@
         <h3 id="appName" class="text-center">plum</h3>
         <p id="desc" class="text-center">Easy URL Shortening</p>
         <form class="shortenForm" action="" method="POST">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <input type="url" class="form-control" name="url" placeholder="Shorten URL" required>
-            </li>
-            <li class="list-inline-item">
-              <input class="btn" type="submit" value="Shorten">
-            </li>
-          </ul>
+          <div class="input-group mb-3">
+            <input id="linkInput" class="form-control form-control-lg" name="url" type="url" placeholder="Paste here to shorten link" aria-describedby="submitButton" required>
+            <div class="input-group-prepend">
+              <button id="submitButton" class="btn btn-light" type="submit">Shorten</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>

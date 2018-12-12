@@ -17,5 +17,10 @@
 }
 
 .shortenForm {
-  text-align: center;
+  max-width: 750px;
+  margin: auto;
+}
+
+#linkInput:focus {
+  box-shadow: none;
 }
