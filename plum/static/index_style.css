@@ -9,3 +9,13 @@
   font-family: 'Roboto Slab', serif;
   color: #333;
 }
+
+#desc {
+  font-size: 23px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.shortenForm {
+  text-align: center;
+}
