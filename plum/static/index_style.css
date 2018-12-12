@@ -1,26 +1,47 @@
 /* Body Style */
 
+body {
+  background-color: #a1a0dd;
+}
+
 .bodyWrapper {
   margin-top: 75px;
 }
 
 #appName {
-  font-size: 55px;
+  font-size: 65px;
   font-family: 'Roboto Slab', serif;
-  color: #333;
+  color: #fff;
 }
 
 #desc {
   font-size: 23px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 .shortenForm {
   max-width: 750px;
   margin: auto;
+  margin-top: 75px;
+}
+
+#linkInput {
+  border: 2px solid #fff;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #linkInput:focus {
   box-shadow: none;
+  border: 2px solid #d9d8f1;
+}
+
+#submitButton {
+  border-radius: 0px 4px 4px 0px;
+  background-color: #a0bedd;
+  border: 1px solid #a0bedd;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
 }
