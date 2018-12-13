@@ -5,3 +5,4 @@ Plum is a service that allows you to shorten URLs.
 - Flask/Python
 - MySQL
 - Bootstrap
+- Peewee
