@@ -19,8 +19,8 @@ class MiniLink(BaseModel): #Shortened link model
     u_id = CharField(max_length=8)
 
 #Run to add tables to database
-mysql_db.connect()
-mysql_db.create_tables([MiniLink])
+# mysql_db.connect()
+# mysql_db.create_tables([MiniLink])
 
 @bp.route('/')
 def index():
