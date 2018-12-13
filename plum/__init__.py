@@ -12,8 +12,9 @@ def create_app(test_config=None):
         pass
 
     #Register blueprints
-    from . import shortener
+    from . import shortener, link
     app.register_blueprint(shortener.bp)
-    app.add_url_rule('/', endpoint='index')    
+    app.register_blueprint(link.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app

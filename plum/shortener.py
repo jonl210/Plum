@@ -31,10 +31,12 @@ def index():
     if request.method == "POST":
         url = request.form["url"]
         u_id = generate_unique_id()
-        MiniLink.create(original_url=url, mini_url="test", u_id=u_id)
+        mini_url = url_for('shortener.shortened_link', u_id=u_id)
+        MiniLink.create(original_url=url, mini_url=mini_url, u_id=u_id)
         return redirect(url_for('index'))
 
-    return render_template('index.html')
+    link_count = MiniLink.select().count()
+    return render_template('index.html', link_count=link_count)
 
 #Redirect to original url from mini link
 @bp.route('/<u_id>')

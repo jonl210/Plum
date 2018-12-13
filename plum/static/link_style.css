@@ -1,0 +1,15 @@
+/* Body Style */
+
+body {
+  background-color: #a1a0dd;
+}
+
+.bodyWrapper {
+  margin-top: 75px;
+}
+
+#appName {
+  font-size: 65px;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+}
