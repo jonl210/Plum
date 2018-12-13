@@ -1,6 +1,8 @@
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import Blueprint, redirect, render_template, request, url_for
 
 from peewee import *
+
+import random, string
 
 #Blueprint
 bp = Blueprint('shortener', __name__)
@@ -22,6 +24,37 @@ class MiniLink(BaseModel): #Shortened link model
 # mysql_db.connect()
 # mysql_db.create_tables([MiniLink])
 
-@bp.route('/')
+#Main page
+@bp.route('/', methods=('GET', 'POST'))
 def index():
+    #If post, create mini link
+    if request.method == "POST":
+        url = request.form["url"]
+        u_id = generate_unique_id()
+        MiniLink.create(original_url=url, mini_url="test", u_id=u_id)
+        return redirect(url_for('index'))
+
     return render_template('index.html')
+
+#Redirect to original url from mini link
+@bp.route('/<u_id>')
+def shortened_link(u_id):
+    link = MiniLink.get(u_id=u_id)
+    return redirect(link.original_url)
+
+#Generate unique id for mini link
+def generate_unique_id():
+    unique = False
+    random_id = 0
+
+    #Check if id already exists
+    while not unique:
+        random_id = ''.join([random.choice(string.ascii_letters +
+            string.digits) for n in range(8)])
+
+        if MiniLink.get_or_none(MiniLink.u_id == random_id) != None:
+            unique = False
+        else:
+            unique = True
+
+    return random_id
