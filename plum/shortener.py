@@ -34,7 +34,7 @@ def index():
         u_id = generate_unique_id()
         mini_url = url_for('.shortened_link', u_id=u_id, _external=True)
         MiniLink.create(original_url=url, mini_url=mini_url, u_id=u_id)
-        return redirect(url_for('index'))
+        return redirect(url_for('link.link_view', u_id=u_id))
 
     link_count = MiniLink.select().count()
     return render_template('index.html', link_count=link_count)
