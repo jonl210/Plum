@@ -14,6 +14,10 @@ body {
   color: #fff;
 }
 
+#link {
+  color: #c6d8ea;
+}
+
 .linkInfo {
   margin-top: 75px;
 }
@@ -21,4 +25,8 @@ body {
 .linkInfoText {
   font-size: 25px;
   color: #fff;
+}
+
+#visitCount {
+  margin-top: 75px;
 }
