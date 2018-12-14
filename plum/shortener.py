@@ -31,7 +31,7 @@ def index():
     if request.method == "POST":
         url = request.form["url"]
         u_id = generate_unique_id()
-        mini_url = url_for('shortener.shortened_link', u_id=u_id)
+        mini_url = url_for('.shortened_link', u_id=u_id, _external=True)
         MiniLink.create(original_url=url, mini_url=mini_url, u_id=u_id)
         return redirect(url_for('index'))
 
