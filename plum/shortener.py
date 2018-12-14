@@ -19,6 +19,7 @@ class MiniLink(BaseModel): #Shortened link model
     original_url = TextField()
     mini_url = TextField()
     u_id = CharField(max_length=8)
+    visit_count = IntegerField(default=0)
 
 #Run to add tables to database
 # mysql_db.connect()
@@ -42,6 +43,8 @@ def index():
 @bp.route('/<u_id>')
 def shortened_link(u_id):
     link = MiniLink.get(u_id=u_id)
+    link.visit_count += 1
+    link.save()
     return redirect(link.original_url)
 
 #Generate unique id for mini link

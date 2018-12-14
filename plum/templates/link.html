@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Plum | Mini Link</title>
+    <title>Plum | Mini URL</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='link_style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
   </head>
@@ -13,6 +13,12 @@
     <div class="container">
       <div class="bodyWrapper">
         <h3 id="appName" class="text-center">plum</h3>
+        <div class="linkInfo">
+          <h3 class="linkInfoText text-center">Mini URL: <a href="{{ link.mini_url }}">{{ link.mini_url }}</a></h3>
+          <h3 class="linkInfoText text-center">Original URL: <a href="{{ link.original_url }}">{{ link.original_url }}</a></h3>
+          <h3 class="linkInfoText text-center">{{ link.visit_count }} visits</h3>
+          <h3 class="linkInfoText text-center">(bookmark this page to monitor link visits)</h3>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

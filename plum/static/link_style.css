@@ -13,3 +13,12 @@ body {
   font-family: 'Roboto Slab', serif;
   color: #fff;
 }
+
+.linkInfo {
+  margin-top: 75px;
+}
+
+.linkInfoText {
+  font-size: 25px;
+  color: #fff;
+}
