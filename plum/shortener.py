@@ -39,7 +39,7 @@ def index():
     link_count = MiniLink.select().count()
     return render_template('index.html', link_count=link_count)
 
-#Redirect to original url from mini link
+#Redirect to original url from mini url
 @bp.route('/<u_id>')
 def shortened_link(u_id):
     link = MiniLink.get(u_id=u_id)
@@ -47,7 +47,7 @@ def shortened_link(u_id):
     link.save()
     return redirect(link.original_url)
 
-#Generate unique id for mini link
+#Generate unique id for mini url
 def generate_unique_id():
     unique = False
     random_id = 0
