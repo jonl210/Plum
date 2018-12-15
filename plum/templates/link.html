@@ -17,6 +17,7 @@
           <h3 class="linkInfoText text-center">Mini URL: <a id="link" href="{{ link.mini_url }}">{{ link.mini_url }}</a></h3>
           <h3 id="visitCount" class="linkInfoText text-center">{{ link.visit_count }} visits</h3>
           <h3 class="linkInfoText text-center">(bookmark this page to monitor link visits)</h3>
+          <a href="{{ url_for('index') }}" id="homeButton" class="btn btn-light">home</a>
         </div>
       </div>
     </div>
